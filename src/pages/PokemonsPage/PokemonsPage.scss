@@ -1,0 +1,15 @@
+.pokemons-page {
+    &__content {
+      text-align: center;
+    }
+  
+    &__pokemon-list {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+  
+    &__show-more {
+      margin-top: 30px;
+  
+    }
+  }
