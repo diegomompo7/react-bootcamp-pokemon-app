@@ -1,8 +1,9 @@
-import "./PokemonsPage.scss"
-import Header from "../../components/Header/Header"
-import useFetch from "../../hooks/useFetch"
+import "./PokemonsPage.scss";
+import Header from "../../components/Header/Header";
+import useFetch from "../../hooks/useFetch";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import { usePagination } from "../../hooks/usePaginator";
+import { FormattedMessage } from "react-intl";
 
 const API_URL = `${process.env.REACT_APP_API_URL}/pokemon?offset=0&limit=2000`;
 
@@ -12,6 +13,7 @@ const PokemonsPage = () => {
 
   return (
     <div className="pokemons-page">
+
       <Header></Header>
       {console.log(API_URL)}
       {console.log(pokemonsData)}
@@ -20,14 +22,16 @@ const PokemonsPage = () => {
           {firstPokemons.map((pokemon) => (
             <PokemonCard className="show-slow" key={pokemon.name} pokemon={pokemon}></PokemonCard>
           ))}
-
-          {theAreMore && (
-            <button onClick={showMorePokemons} className="btn pokemons-page__show-more">+ MORE</button>
-          )}
         </div>
+
+        {theAreMore && (
+          <button onClick={showMorePokemons} className="btn pokemons-page__show-more">
+            <FormattedMessage id="general:show-more"></FormattedMessage>
+          </button>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PokemonsPage
+export default PokemonsPage;
