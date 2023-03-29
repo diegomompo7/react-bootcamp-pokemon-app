@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import UseFetch from "../../hooks/useFetch"
+import "./PokemonCard.scss"
 
 const PokemonCard = ({ pokemon }) => {
   const [pokemonData] = UseFetch(pokemon.url)
