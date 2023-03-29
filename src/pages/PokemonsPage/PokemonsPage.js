@@ -13,14 +13,13 @@ const PokemonsPage = () => {
   return (
     <div className="pokemons-page">
       <Header></Header>
+      {console.log(API_URL)}
       {console.log(pokemonsData)}
       <div className="page__content pokemons-page__content">
         <div className="pokemons-page__pokemon-list">
-          {firstPokemons.map((pokemon) => {
-            return (
-              <PokemonCard className="show-slow" key={pokemon.name} pokemon={pokemon}></PokemonCard>
-            )
-          })}
+          {firstPokemons.map((pokemon) => (
+            <PokemonCard className="show-slow" key={pokemon.name} pokemon={pokemon}></PokemonCard>
+          ))}
 
           {theAreMore && (
             <button onClick={showMorePokemons} className="btn pokemons-page__show-more">+ MORE</button>
