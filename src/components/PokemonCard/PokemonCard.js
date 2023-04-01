@@ -6,7 +6,6 @@ import { FormattedMessage } from "react-intl";
 const PokemonCard = ({ pokemon }) => {
   const [pokemonData] = UseFetch(pokemon.url);
 
-  console.log("HOLA");
   return (
     <div className="pokemon-card">
       <img className="pokemon-card__image" src={pokemonData?.sprites?.other?.["official-artwork"]?.front_default}></img>
